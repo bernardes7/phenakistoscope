@@ -9,6 +9,7 @@ let imgNr = [0,0,0];
 
 p5.disableFriendlyErrors = true;
 
+
 function preload(){
 
   fundo = loadImage('fundo.png');
@@ -37,6 +38,9 @@ function setup() {
   }
 }
 
+if (window.DeviceOrientationEvent) { window.addEventListener('orientationchange', function() { location.reload(); }, false); }
+
+
 function mousePressed() {
   let i = int(random(3));
   imgNr[i] = int(random(nrFiles));
@@ -51,12 +55,11 @@ function draw() {
   background(255); 
   angle += 30;
   rotate(angle);
-  scale(min(height/1280, width/1280));
+  scale(min(height/1180, width/1180));
   image(fundo, 0, 0);
   image(img_exterior[imgNr[0]], 0, 0);
   image(img_meio[imgNr[1]], 0, 0);
   image(img_interior[imgNr[2]], 0, 0);
-  //stroke(255,0,0);
   stroke(29, 28, 131);
   strokeWeight(6);
   noFill();
