@@ -42,18 +42,24 @@ function mousePressed() {
   imgNr[i] = int(random(nrFiles));
 }
 
+function deviceShaken() {
+  let i = int(random(3));
+  imgNr[i] = int(random(nrFiles));
+}
+
 function draw() {
   background(255); 
   angle += 30;
   rotate(angle);
-  scale(height/1280);
+  scale(min(height/1280, width/1280));
   image(fundo, 0, 0);
   image(img_exterior[imgNr[0]], 0, 0);
   image(img_meio[imgNr[1]], 0, 0);
   image(img_interior[imgNr[2]], 0, 0);
+  //stroke(255,0,0);
   stroke(29, 28, 131);
   strokeWeight(6);
   noFill();
   ellipse(0, 0, 362, 362);
-  ellipse(0, 0, 719, 719);
+  ellipse(0, 0, 722, 722);
 }
