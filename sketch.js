@@ -42,7 +42,9 @@ if (window.DeviceOrientationEvent) { window.addEventListener('orientationchange'
 
 
 function mousePressed() {
-  let i = int(random(3));
+  let d = int(dist(width/2, height/2, mouseX, mouseY));
+  let i = (int((d/(min(height/2,width/2)))*3));
+  // let i = int(random(3));
   imgNr[i] = int(random(nrFiles));
 }
 
@@ -55,11 +57,11 @@ function draw() {
   background(255); 
   angle += 30;
   rotate(angle);
-  scale(min(height/1180, width/1180));
+  scale(min(height/1080, width/1080));
   image(fundo, 0, 0);
-  image(img_exterior[imgNr[0]], 0, 0);
+  image(img_exterior[imgNr[2]], 0, 0);
   image(img_meio[imgNr[1]], 0, 0);
-  image(img_interior[imgNr[2]], 0, 0);
+  image(img_interior[imgNr[0]], 0, 0);
   stroke(29, 28, 131);
   strokeWeight(6);
   noFill();
