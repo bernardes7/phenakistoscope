@@ -1,2 +1,2 @@
 # phenakistoscope
-Phenakistoscope (FABAUL - INESC TEC)
+Phenakistoscope (FBAUL - INESC TEC)
